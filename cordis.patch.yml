@@ -1,0 +1,12 @@
+# dsh-overlay-opacity bundle patch: mount the plugin as one row.
+#
+# host 半边只做两件事：读写 ~/.dsh-overlay-opacity/config.json，并通过
+# webServer 暴露 GET/POST /overlay-opacity/settings 两个路由。
+# client 半边由 package.json 的 dsh.client.platform: "web" 自动装配。
+#
+# 该行不声明 inject：webServer 在 apply 里用 ctx.webServer 取，取不到就
+# 静默降级（headless / TUI profile 下没有 HTTP 服务器，此时插件等于不存在，
+# 而不是让整个 profile 装配失败）。
+- insert:
+    - id: overlay-opacity
+      name: 'dsh-overlay-opacity'

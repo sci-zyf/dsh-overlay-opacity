@@ -1,0 +1,41 @@
+{
+  "name": "dsh-overlay-opacity",
+  "version": "0.1.0",
+  "description": "Independent fill-opacity control for DSH overlay surfaces: menus/dropdowns/command palette (--dsw-specific-menu) and dialog/overlay backdrops (--dsw-alias-bg-overlay). DSH 浮层底填充不透明度独立控制：菜单/下拉/命令浮层（--dsw-specific-menu）与弹窗/浮层底（--dsw-alias-bg-overlay）。",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "cordis",
+    "theme",
+    "overlay",
+    "opacity",
+    "menu"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "license": "MIT"
+}
